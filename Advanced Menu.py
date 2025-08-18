@@ -6,10 +6,10 @@ class AdvancedMenuPDF(FPDF):
         super().__init__()
 
 
-        self.add_font('DejaVu', '', 'C:/Users/shach/Desktop/java/APP/DejaVuSans.ttf')
-        self.add_font('DejaVu', 'B', 'C:/Users/shach/Desktop/java/APP/DejaVuSans-Bold.ttf')
-        self.add_font('DejaVu', 'I', 'C:/Users/shach/Desktop/java/APP/DejaVuSans-Oblique.ttf')
-        self.add_font('DejaVu', 'BI', 'C:/Users/shach/Desktop/java/APP/DejaVuSans-BoldOblique.ttf')
+        self.add_font('DejaVu', '', '/path/DejaVuSans.ttf')
+        self.add_font('DejaVu', 'B', '/path/DejaVuSans-Bold.ttf')
+        self.add_font('DejaVu', 'I', '/path/DejaVuSans-Oblique.ttf')
+        self.add_font('DejaVu', 'BI', '/path/DejaVuSans-BoldOblique.ttf')
 
         self.set_font("DejaVu", "B", 18)  # For bold
         self.set_font("DejaVu", "", 12)   # For regular
