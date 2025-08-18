@@ -36,26 +36,26 @@ class AdvancedMenuPDF(FPDF):
         }
 
     def _define_fonts(self):
-        self.set_font("Helvetica", size=12)
+        self.set_font("DejaVu", size=12)
 
     def header(self):
         self.set_fill_color(*self.colors["header_bg"])
         self.set_text_color(*self.colors["header_text"])
-        self.set_font("Helvetica", "B", 18)
+        self.set_font("DejaVu", "B", 18)
         self.cell(0, 15, "Suuvai Restaurant - Kongu Nadu Menu", border=0, new_x=XPos.LMARGIN, new_y=YPos.NEXT, align="C", fill=True)
         self.ln(3)
 
     def section_title(self, title):
         self.set_fill_color(*self.colors["header_bg"])
         self.set_text_color(*self.colors["header_text"])
-        self.set_font("Helvetica", "B", 14)
+        self.set_font("DejaVu", "B", 14)
         self.cell(0, 10, f"  {title}", new_x=XPos.LMARGIN, new_y=YPos.NEXT, fill=True)
         self.ln(4)
 
     def add_badge(self, text):
         self.set_fill_color(*self.colors["badge_bg"])
         self.set_text_color(*self.colors["highlight"])
-        self.set_font("Helvetica", "B", 8)
+        self.set_font("DejaVu", "B", 8)
         badge_width = self.get_string_width(text) + 6
         y = self.get_y()
         x = self.get_x()
@@ -64,7 +64,7 @@ class AdvancedMenuPDF(FPDF):
 
     def menu_item(self, name, price, desc="", badge=None):
         self.set_text_color(*self.colors["text"])
-        self.set_font("Helvetica", "B", 12)
+        self.set_font("DejaVu", "B", 12)
         start_x = self.get_x()
         start_y = self.get_y()
 
@@ -81,7 +81,7 @@ class AdvancedMenuPDF(FPDF):
         # Print price, right aligned on same line as the first line of name
         self.set_xy(start_x + name_width + 10, start_y)
         self.set_text_color(*self.colors["price"])
-        self.set_font("Helvetica", "B", 12)
+        self.set_font("DejaVu", "B", 12)
         self.cell(price_width, 7, price_text, align="R", new_x=XPos.LMARGIN, new_y=YPos.NEXT,)
 
         # Add badge if any
@@ -94,14 +94,14 @@ class AdvancedMenuPDF(FPDF):
 
         if desc:
             self.set_text_color(*self.colors["desc"])
-            self.set_font("Helvetica", "", 9)
+            self.set_font("DejaVu", "", 9)
             self.multi_cell(0, 5, desc)
 
         self.ln(3)
 
     def combo_suggestion(self, text):
         self.set_text_color(*self.colors["highlight"])
-        self.set_font("Helvetica", "BU", 11)
+        self.set_font("DejaVu", "BU", 11)
         self.cell(0, 8, text, new_x=XPos.LMARGIN, new_y=YPos.NEXT, align='C')
         self.ln(3)
 
